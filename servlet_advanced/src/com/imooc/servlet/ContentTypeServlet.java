@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RequestServlet
+ * Servlet implementation class ContentTypeServlet
  */
-@WebServlet("/request")
-public class RequestServlet extends HttpServlet {
+@WebServlet("/ct")
+public class ContentTypeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RequestServlet() {
+    public ContentTypeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,14 +26,8 @@ public class RequestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().println("This is get method");
+		String output = "<h1><a href='http://www.baidu.com.'><span>°Ù¶È</span></a></h1>";
+		response.setContentType("application/x-msdownload;charset=utf-8");
+		response.getWriter().println(output);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().println("This is post method");
-	}
-
 }

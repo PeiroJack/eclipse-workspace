@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RequestServlet
+ * Servlet implementation class UserAgentServlet
  */
-@WebServlet("/request")
-public class RequestServlet extends HttpServlet {
+@WebServlet("/ua")
+public class UserAgentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RequestServlet() {
+    public UserAgentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,14 +26,17 @@ public class RequestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().println("This is get method");
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().println("This is post method");
+		String userAgent = request.getHeader("User-Agent");
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().println(userAgent);
+		response.getWriter().println("???");
+		String output = "";
+		if(userAgent.indexOf("Windows NT") != -1) {
+			output = "<h1>这是PC端首页</h1>";
+		}else if(userAgent.indexOf("iPhone") != -1 || userAgent.indexOf("Android") != -1) {
+			output = "<h1>这是移动端首页</h1>";
+		}
+		response.getWriter().println(output);
 	}
 
 }

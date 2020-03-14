@@ -1,4 +1,4 @@
-package com.imooc.servlet;
+package com.imooc.direct;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class RequestServlet
+ * Servlet implementation class CheckLoginServlet
  */
-@WebServlet("/request")
-public class RequestServlet extends HttpServlet {
+@WebServlet("/direct/check")
+public class CheckLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RequestServlet() {
+    public CheckLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,14 +26,12 @@ public class RequestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().println("This is get method");
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().println("This is post method");
+		System.out.println("用户登录成功！");
+		request.setAttribute("username","PeiroJack");
+		//请求转发
+//		request.getRequestDispatcher("/direct/index").forward(request, response);
+		//响应重定向
+		response.sendRedirect("/servlet_advanced/direct/index");
 	}
 
 }
