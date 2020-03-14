@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<%! 
+	boolean isPrime(int num){
+		boolean flag = true;
+		for(int j = 2 ; j < num ;j++){
+			if(num % j == 0){
+				flag = false;
+				break;
+			}
+		}
+		return flag;
+	}
+	%>
+	<% 
+		for(int i = 2 ; i<=1000 ; i++){
+			
+			if(isPrime(i) == true){
+				out.println("<h1>" + i + "</h1>");
+			}
+		}
+		
+	%>
+</body>
+</html>

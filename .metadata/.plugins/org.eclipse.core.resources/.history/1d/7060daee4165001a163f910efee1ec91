@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>year</th>
+			<th>salary</th>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>1500</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Sat Mar 14 01:17:15 CST 2020
+org.eclipse.jst.jee.server\:MyJsp=D\:\\apache-tomcat-8.5.51\\webapps\\MyJsp
+org.eclipse.jst.jee.server\:JspPracCode=D\:\\apache-tomcat-8.5.51\\webapps\\JspPracCode
+org.eclipse.jst.jee.server\:WebDemo1=D\:\\apache-tomcat-8.5.51\\webapps\\WebDemo1
