@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletContextInitServlet
  */
-@WebServlet("/servletcontext/index")
+@WebServlet("/servletcontext/init")
 public class ServletContextInitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,8 +30,10 @@ public class ServletContextInitServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		ServletContext context = request.getServletContext();
-		context.setAttribute("copyright", "@2018 imooc");
-		context.setAttribute("title", "Ä½¿ÎÍø");
+		String copyright = context.getInitParameter("copyright");
+		String title = context.getInitParameter("title");
+		context.setAttribute("copyright", copyright);
+		context.setAttribute("title", title);
 		response.getWriter().println("init success");
 	}
 
