@@ -9,6 +9,18 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+  	<servlet-name>Demo</servlet-name>
+  	<servlet-class>com.imooc.servlet.SelectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Demo</servlet-name>
+  	<url-pattern>/Demo/Add.do</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+  	<servlet-name>Demo</servlet-name>
+  	<url-pattern>/Demo/Select.do</url-pattern>
+  </servlet-mapping>
   <context-param>
   	<param-name>copyright</param-name>
   	<param-value>2020</param-value>
@@ -24,6 +36,6 @@
   </error-page>
   <error-page>
   	<error-code>500</error-code>
-  	<location>/error/500.html</location>
+  	<location>/error/500.jsp</location>
   </error-page>
 </web-app>
