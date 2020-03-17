@@ -71,7 +71,7 @@
                     <th>部门</th>
                     <th>职务</th>
                     <th>工资</th>
-                    <th>&nbsp;</th>
+                    
                 </tr>
                 </thead>
                 <tbody>
